@@ -38,7 +38,17 @@
                     <br>
                     <p>{{c.cmt}}</p>
                   {% endfor %}
-                  <a href="{% url 'addcmt' post.id %}">Add a Comment</a>
+           
+            <form action="" method="post">
+                <div class="mb-3">
+                    {% csrf_token %}
+                    <label for="comment" class="form-label"></label>
+                    <input type="text" class="form-control" id="comment" name="comment" placeholder="Write a comment Here.">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+    </div>
             
         </div>
 

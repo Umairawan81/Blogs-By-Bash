@@ -9,6 +9,5 @@ urlpatterns = [
     path('Blogs_post/<str:pk>/', views.DescView, name='desc'),
     path('contact-us/', views.contact, name='contact'),
     path('About-us/', views.About, name='About'),
-    path('Blogs_post/<str:pk>/add-comment', views.AddComment, name='addcmt'),
    
 ]

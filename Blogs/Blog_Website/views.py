@@ -27,6 +27,20 @@ def blogView(request ):
 
 
 def DescView(request, pk):
+    if request.method == 'POST':
+       cmt_form = request.POST.get('comment')
+       cmt_user = request.user
+       cmt_post = Post.objects.filter(id = pk).first()
+
+       #print(cmt_form , cmt_user , cmt_post)
+       new_cmt = Comments(post=cmt_post , cmt=cmt_form , name=cmt_user)
+       print(cmt_form , cmt_user , cmt_post)
+       new_cmt.save()
+       return redirect('desc' , pk=pk) #We could work without it it will render 
+         # desc page regardless we use redirect or not but upon reloading page
+         # it will create another instance of the csame comment and display it
+         # to tackle that I redirected to same page after saving comment. 
+    
     post = Post.objects.filter(id = pk).first()
     comments= Comments.objects.filter(post=post)
     context = {'post': post , 'comments': comments}

@@ -1,0 +1,31 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <div class="container d-flex align-items-start justify-content-center" style="min-height: 100vh;">
+        <div class="container">
+            {% if s_blog %} 
+                <h1 class="my-4">You Searched for </h1>
+
+            {% for s_b in search_b %}
+                <h3 class="my-4"><a href="{% url 'desc' s_b.id %}" 
+                    style="text-decoration: none; color: black;">{{s_b}}</a></h3>
+            {% endfor %}
+
+            {% else %}
+                <h1 class="my-4">Hey! you forgot to Search. </h1>
+
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

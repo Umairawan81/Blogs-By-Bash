@@ -46,21 +46,15 @@ def DescView(request, pk):
     context = {'post': post , 'comments': comments}
     return render(request, 'detail.html', context)
 
-
-def AddComment(request, pk):
-   return render(request , 'add_cmt.html')
-
     
-def postComment(request):
-   # Form creation krni ha abhi.
+
+def Search(request):
    if request.method == 'POST':
-      cmt_post = Comment_form(request.POST)
-      if cmt_post.is_valid():
-         cleaned_data = cmt_post.cleaned_data
-         print(cleaned_data)
-         cmt_post.save()
-      
-   return HttpResponseRedirect(request.META.get('HTTP_REFERER'), {'cmt_post': cmt_post})
-
-
+      s_blog = request.POST.get('sp')
+      # print(s_blog) --for checking purposes
+      search_b = Post.objects.filter(title__contains = s_blog)
+      context = {'s_blog': s_blog , 'search_b':search_b}
+      return render(request , 'search_result.html' , context)
+   else:
+      return render(request , 'search_result.html')
 

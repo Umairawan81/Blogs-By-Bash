@@ -1,6 +1,11 @@
 from django.db import models
 from tinymce.models import HTMLField
-from django.contrib.auth.models import User
+
+
+class User(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.TextField()
+    
 
 class Post(models.Model):
     title = models.CharField(max_length=255)

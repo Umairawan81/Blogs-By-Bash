@@ -1,27 +1,6 @@
 {% extends 'navbar.html' %}
 {% block content %}
 
-<style>
-    .like-container {
-        width: 100px;
-        height: auto;
-        padding: 10px 10px 10px 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
-        margin-bottom: 10px;
-    }
-    .like-container button {
-        background: none;
-        border: none;
-    }
-    i {
-        font-size: 22px;
-        cursor: pointer;
-    }
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +37,7 @@
                   {% for c in comments %}
                     <strong>@{{c.name}} -- {{c.date_cmt}}</strong>
                     <br>
-                    <p>{{c.cmt}}</p>
+                    <p>{{c.cmt}}   <a href="{% url 'del_cmt' c.id %}">   delete</a>  </p>
                   {% endfor %}
            
             <form action="" method="post">

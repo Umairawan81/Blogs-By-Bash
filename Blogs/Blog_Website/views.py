@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse ,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
+from django.contrib import messages
 from .forms import Comment_form
 from .models import *
 
@@ -57,4 +58,17 @@ def Search(request):
       return render(request , 'search_result.html' , context)
    else:
       return render(request , 'search_result.html')
+   
+
+
+def DeleteComment(request ,pk ):
+   comment_d = Comments.objects.filter(id = pk).first()
+   if request.user == comment_d.name:
+      comment_d.delete()
+      referer = request.META.get('HTTP_REFERER')
+      if referer:
+         return redirect(referer)
+   else:
+       return HttpResponse("Only comment's creator can delete!")
+   
 

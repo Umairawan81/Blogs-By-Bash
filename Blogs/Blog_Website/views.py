@@ -1,9 +1,17 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect , get_object_or_404
 from django.http import HttpResponse ,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
+from django.urls import reverse
 from .forms import Comment_form
 from .models import *
+
+
+def LikeView(request , pk):
+   post = get_object_or_404(Post , id=request.POST.get('post_id')) # post_id from like form
+   post.likes.add(request.user)
+   return HttpResponseRedirect(reverse('desc' , args=[str(pk)]))
+
 
 def home(request):
    user = request.POST.get("name")

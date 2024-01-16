@@ -9,6 +9,7 @@ urlpatterns = [
     path('Blogs_post/<str:pk>/', views.DescView, name='desc'),
     path('contact-us/', views.contact, name='contact'),
     path('About-us/', views.About, name='About'),
-    path('Search/', views.Search, name='Search_post')
+    path('Search/', views.Search, name='Search_post'),
+    path('Like-post/<int:pk>',views.LikeView , name='like_post'),
    
 ]

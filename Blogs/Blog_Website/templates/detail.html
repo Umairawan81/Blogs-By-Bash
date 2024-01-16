@@ -19,14 +19,6 @@
         <br>
         {{ post.description | safe}}
         <br>
-        <br>
-
-        <form action="{% url 'like_post' post.id % }" method="post">
-            {% csrf_token %}
-            <button type="submit" , name="post_id" , value="{{post.id}}"
-            class="btn btn-primary btn-sm" >Like</button>
-        </form>
-
         <div class="col-md-12 text-end">
             <!-- Author info on the right -->
             <p style="display: inline-block; margin-right: 10px; font-size: 20px;">Written by:</p>

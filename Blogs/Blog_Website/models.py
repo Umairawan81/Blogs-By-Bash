@@ -2,11 +2,9 @@ from django.db import models
 from tinymce.models import HTMLField
 
 
-
 class User(models.Model):
     name = models.CharField(max_length=50)
     email = models.TextField()
-    password = models.CharField(max_length=8, blank=True, null=True)
     
 
 class Post(models.Model):
@@ -15,7 +13,6 @@ class Post(models.Model):
     description = HTMLField()
     auther = models.CharField(max_length=50)
     date_created = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User , related_name='post')
 
     class Meta:
         ordering = ['-date_created']

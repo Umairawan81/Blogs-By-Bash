@@ -13,6 +13,7 @@ class Post(models.Model):
     description = HTMLField()
     auther = models.CharField(max_length=50)
     date_created = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User , related_name='post')
 
     class Meta:
         ordering = ['-date_created']

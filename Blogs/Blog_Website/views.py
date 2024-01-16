@@ -28,6 +28,11 @@ def blogView(request ):
 
 def DescView(request, pk):
     if request.method == 'POST':
+       if request.user.is_authenticated:
+          user = request.user
+          post.likes.add(user)
+
+
        cmt_form = request.POST.get('comment')
        cmt_user = request.user
        cmt_post = Post.objects.filter(id = pk).first()

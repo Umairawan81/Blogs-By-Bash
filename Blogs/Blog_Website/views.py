@@ -18,6 +18,15 @@ def About(request):
    return render(request , 'About.html')
 
 def contact(request):
+   if request.method == 'POST':
+      con_name = request.POST.get('Name')
+      con_subj = request.POST.get('subj')
+      con_email = request.POST.get('Email_addr')
+
+      print('con_name: ',con_name)
+      context = {'con_name': con_name}
+      print('context: ',context)
+      return render(request ,'contact.html' , context)
    return render(request , 'contact.html')
 
 

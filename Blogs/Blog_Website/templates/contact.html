@@ -1,7 +1,8 @@
+
 {% extends 'navbar.html' %}
 
 {% block content %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,15 +30,15 @@
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="Name" class="form-label"><h6 class="my-0">Your Name</h6></label>
-                            <input type="Name" class="form-control" name="Name" placeholder="ABC..">
+                            <input type="Name" class="form-control" name="Name" placeholder="ABC.." style="font-style: italic;">
                         </div>
                         <div class="mb-3">
                             <label for="Email" class="form-label"><h6>Email address</h6></label>
-                            <input type="email" class="form-control" name="Email_addr" placeholder="name@example.com">
+                            <input type="email" class="form-control" name="Email_addr" placeholder="name@example.com" style="font-style: italic;">
                         </div>
                         <div class="mb-3">
-                            <label for="Subject" class="form-label"><h6>Subject</h6></label>
-                            <textarea class="form-control" name="subj" rows="3"></textarea>
+                            <label for="Subject" class="form-label"><h6>Message</h6></label>
+                            <textarea class="form-control" name="msg" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -46,6 +47,7 @@
             </div>
         </div>
     </div>
+    <img src="{% static 'Images/Contact-us.png' %}">
     </center>
     {% endif%}
 

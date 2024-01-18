@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.contrib import messages
 from .forms import Comment_form
 from .models import *
+from django.core.mail import send_mail
 
 def home(request):
    user = request.POST.get("name")
@@ -20,12 +21,18 @@ def About(request):
 def contact(request):
    if request.method == 'POST':
       con_name = request.POST.get('Name')
-      con_subj = request.POST.get('subj')
       con_email = request.POST.get('Email_addr')
+      con_msg = request.POST.get('msg')
 
-      print('con_name: ',con_name)
+      # This is according to django email sending formate
+      send_mail(
+         'Message from' + con_name, # Name of email sender
+         con_msg, # the mesage body here
+         con_email, # Sender email
+         ['Umairawan03125@gmail.com'],# Reciever Email
+      )
+
       context = {'con_name': con_name}
-      print('context: ',context)
       return render(request ,'contact.html' , context)
    return render(request , 'contact.html')
 

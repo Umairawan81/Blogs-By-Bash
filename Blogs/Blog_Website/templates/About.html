@@ -1,25 +1,58 @@
 {% extends 'navbar.html' %}
 {% block content %}
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div class="container">
-    <h1 class="my-4">About us</h1>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
      crossorigin="anonymous">
 </head>
 <body>
+    <br>
+    <br>
+    <center><h1 class="my-4"><strong>About us</strong></h1></center>
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d-flex flex-column">
+                       <img src="{% static 'Images/About.png' %}" class="img-fluid h-100">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow" style="width: 100%;">
+                            <div class="card-body">
+                                <center><h1>MEET UMAIR</h1> </center>
+                                
+                                <p style="font-size: 18px; font-style: italic; text-align: justify;">
+                                    Muhammad Umair Awan, a 21-year-old 
+                                    resident of Pakistan, is passionately
+                                    navigating the realm of Django web development. 
+                                    Eager to leave his mark on the digital landscape,
+                                    Umair is committed to honing his skills in crafting
+                                    robust and innovative web solutions. With a
+                                    keen interest in creating efficient and user-friendly
+                                    applications, he immerses himself in the intricacies 
+                                    of Django's framework. Based in the vibrant tech community 
+                                    of Pakistan, Umair is driven by a vision to contribute
+                                    meaningfully to the ever-evolving world of web development,
+                                    making him an enthusiastic learner in this dynamic field.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
      crossorigin="anonymous"></script>
-    
 </body>
 </html>
-
-
-
+{% include 'Footer.html' %}
 {% endblock %}
-</div>

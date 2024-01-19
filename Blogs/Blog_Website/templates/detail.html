@@ -1,6 +1,8 @@
 {% extends 'navbar.html' %}
 {% block content %}
 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +39,7 @@
                   {% for c in comments %}
                     <strong>@{{c.name}} -- {{c.date_cmt}}</strong>
                     <br>
-                    <p>{{c.cmt}}   <a href="{% url 'del_cmt' c.id %}">   delete</a>  </p>
+                    <p>{{c.cmt}}   <a href="{% url 'del_cmt' c.id %}">  (delete)</a>  </p>
                   {% endfor %}
            
             <form action="" method="post">
@@ -48,6 +50,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <br>
 
     </div>
             
@@ -67,6 +70,6 @@
 </html>
 
 
-
+{% include 'Footer.html' %}
 {% endblock %}
 </div>

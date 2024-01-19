@@ -31,14 +31,25 @@
                   </li>
                 </ul>
                 
-                <form class="d-flex" role="search" method="post" action="{% url 'Search_post' %}">
+                <form class="d-flex mr-auto" role="search" method="post" action="{% url 'Search_post' %}">
                   {% csrf_token %}
                   <input class="form-control me-2" type="search" placeholder="Search Blog"
                    aria-label="Search" name="sp">
                   <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+            
               </div>
             </div>
+            {% if user.is_anonymous %}
+            <a href="{% url 'SignUp' %}">
+              <button class="btn btn-outline-success me-2" type="submit">SignUp</button>
+            </a>
+            {% else %}
+            <form action="{% url 'LogOut' %}" method="post">
+              {% csrf_token %}
+                <button class="btn btn-outline-danger me-2" type="submit">Logout</button>
+          </form>
+            {% endif %}
           </nav>
     </div>
 

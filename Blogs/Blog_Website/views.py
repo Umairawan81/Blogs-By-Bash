@@ -6,6 +6,7 @@ from django.contrib import messages
 from .forms import Comment_form
 from .models import *
 from django.core.mail import send_mail
+from django.contrib.auth import authenticate , login ,logout
 
 def home(request):
    user = request.POST.get("name")
@@ -92,3 +93,38 @@ def DeleteComment(request ,pk ):
    
    
 
+def SignUp(request):
+   if request.method == 'POST':
+      uname = request.POST.get('Name')
+      uemail = request.POST.get('Email_addr')
+      pass1 = request.POST.get('pass') 
+
+      my_user = User.objects.create_user(uname , uemail , pass1)
+      my_user.save()
+      login(request , my_user)
+      return redirect('Blogs')
+   
+   return render(request,'SignUp.html')
+
+
+
+def LogIn(request):
+   if request.method == 'POST':
+      uname = request.POST.get('Name')
+      pass1 = request.POST.get('pass') 
+
+      user = authenticate(request , username = uname , password = pass1)
+      if user is not None:
+         login(request , user)
+         return redirect('Blogs')
+      else:
+         return HttpResponse("Username or password is incorrect!")
+
+
+   return render(request,'LogIn.html')
+
+
+def LogOut(request):
+   if request.method =='POST':
+      logout(request)
+      return redirect('LogIn')

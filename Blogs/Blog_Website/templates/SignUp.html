@@ -23,10 +23,11 @@
     <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
         <div class="container">
             <div class="row">
+                <center>
                 <div class="col-md-4">
                     <div class="card shadow" style="width: 100%;">
                         <div class="card-body">
-                            <h1>Contact us</h1>
+                            <h1>Sign Up</h1>
                             <hr>
                             <form action="" method="POST">
                                 {% csrf_token %}
@@ -39,17 +40,19 @@
                                     <input type="email" class="form-control" name="Email_addr" placeholder="name@example.com" style="font-style: italic;">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="Subject" class="form-label"><h6>Message</h6></label>
-                                    <textarea class="form-control" name="msg" rows="3"></textarea>
+                                    <label for="Subject" class="form-label"><h6>Password</h6></label>
+                                    <input type="password" class="form-control" name="pass">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
+                        <p>Already Have an account then 
+                            <a href="{% url 'LogIn' %}">Login Here</a>
+                        </p>
                     </div>
+                
                 </div>
-                <div class="col-md-8">
-                    <img src="{% static 'Images/Contact-us.png' %}" class="img-fluid" alt="Contact us image">
-                </div>
+                </center>
             </div>
         </div>
     </div>

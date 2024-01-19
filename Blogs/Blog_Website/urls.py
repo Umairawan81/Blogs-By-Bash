@@ -11,5 +11,8 @@ urlpatterns = [
     path('About-us/', views.About, name='About'),
     path('Search/', views.Search, name='Search_post'),
     path('delete-comment/<str:pk>/', views.DeleteComment , name='del_cmt'),
+    path('Sign-Up/', views.SignUp, name='SignUp'),
+    path('Log-In/', views.LogIn, name='LogIn'),
+    path('Log-Out/', views.LogOut, name='LogOut'),
    
 ]

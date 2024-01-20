@@ -13,17 +13,10 @@
      crossorigin="anonymous">
 </head>
 <body>
-    {% if con_name %}
-        <center>
-            <h2>Thanks {{con_name}}!</h2>
-            <p>We received your email. Thanks for contacting us.</p>
-        </center>
-    {% else %}
     <center>
     <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
         <div class="container">
             <div class="row">
-                <center>
                 <div class="col-md-4">
                     <div class="card shadow" style="width: 100%;">
                         <div class="card-body">
@@ -52,12 +45,13 @@
                     </div>
                 
                 </div>
-                </center>
+                <div class="col-md-8">
+                    <img src="{% static 'Images/Sign_up.png' %}" class="img-fluid">
+                </div>
             </div>
         </div>
     </div>
     </center>
-    {% endif%}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

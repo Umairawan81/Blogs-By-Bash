@@ -10,12 +10,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogs by Bash</title>
     <div class="container">
-    <h1 class="my-4">Homepage</h1>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
      crossorigin="anonymous">
+
 </head>
 <body>
+    <center>
+    <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow" style="width: 100%;">
+                        <div class="card-body">
+                            <h1>Blogs By Bash</h1>
+                            <hr>
+                            <p style="font-size: 18px; font-style: italic; text-align: justify;">
+                                Unlock a World of Insights and Inspiration! 
+                                Explore captivating articles, thought-provoking 
+                                stories, and expert perspectives on <strong>Blogs By Bash</strong>. 
+                                Immerse yourself in a journey of knowledge and discovery 
+                                because the best stories are waiting to be read here. 
+                                Start exploring now and let the adventure begin!
+                            </p>
+                            <a href="{% url 'Blogs' %}" class="btn btn-custom" 
+                                style="background-color: #3ED8F0 !important; color: #fff !important;">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <img src="{% static 'Images/Homepage.png' %}" class="img-fluid" alt="Contact us image">
+                </div>
+            </div>
+        </div>
+    </div>
+    </center>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

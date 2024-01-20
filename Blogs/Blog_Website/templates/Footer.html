@@ -1,46 +1,58 @@
 {% load static %} 
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/footer_css.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-
-wvfXpqpZZVQGK6TAh5PVlT+zxv5Tq7USTXGOYGNADxmz0"
-crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Footer</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/footer_css.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-
+	wvfXpqpZZVQGK6TAh5PVlT+zxv5Tq7USTXGOYGNADxmz0"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	
 
 <footer class="footer-distributed">
 
 			<div class="footer-left">
 
-				<h3>Company<span>logo</span></h3>
+				<img src="{% static 'Images/Logo.png' %}" height="150">
 
 				<p class="footer-links">
-					<a href="{% url 'home' %}" class="link-1">Home</a>
+					<a href="{% url 'home' %}" class="link-1"><strong>Home</strong></a>
 					
-					<a href="{% url 'Blogs' %}">Blog</a>
+					<a href="{% url 'Blogs' %}"><strong>Blogs</strong></a>
 				
 				
-					<a href="{% url 'About' %}">About</a>
+					<a href="{% url 'About' %}"><strong>About</strong></a>
 					
 					
-					<a href="{% url 'contact' %}">Contact</a>
+					<a href="{% url 'contact' %}"><strong>Contact Us</strong></a>
 				</p>
 
-				<p class="footer-company-name">Muhammad Umair Awan © 2024</p>
+				<strong><p class="footer-company-name">Muhammad Umair Awan © 2024</p></strong>
 			</div>
 
 			<div class="footer-center">
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>St No # 05, Range Road</span> Rawalpindi, Pakistan</p>
+					<p><span> <strong> St No # 05, Range Road </strong> </span> <strong> Rawalpindi, Pakistan </strong> </p> 
 				</div>
 
 				<div>
 					<i class="fa fa-phone"></i>
-					<p>+1.555.555.5555</p>
+					<p> <strong> +1.555.555.5555 </strong> </p> 
 				</div>
 
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:Umairawan03125@gmail.com">Umairawan03125@gmail.com</a></p>
+					<strong>
+						<p><a href="mailto:Umairawan03125@gmail.com"><strong> Umairawan03125@gmail.com </strong></a></p>
+					</strong>
 				</div>
 
 			</div>
@@ -49,12 +61,15 @@ crossorigin="anonymous">
 
 				<p class="footer-company-about">
 					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+					<strong>A young aspiring web developer trying 
+						to showcase his skills and deliever quality 
+						products to satisfy the client's need.
+					</strong>
 				</p>
 
 				<div class="footer-icons">
 
-					<a href="#"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.facebook.com/profile.php?id=100040751835284&mibextid=JRoKGi"><i class="fab fa-facebook"></i></a>
 					<a href="#"><i class="fab fa-twitter"></i></a>
 					<a href="https://www.linkedin.com/in/muhammad-umair-awan-"><i class="fab fa-linkedin"></i></a>
 					<a href="https://github.com/Umairawan81"><i class="fab fa-github"></i></a>
@@ -64,3 +79,6 @@ crossorigin="anonymous">
 			</div>
 
 		</footer>
+	
+</body>
+</html>

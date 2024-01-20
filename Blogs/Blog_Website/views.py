@@ -80,16 +80,17 @@ def Search(request):
 
 def DeleteComment(request ,pk ):
    comment_d = Comments.objects.filter(id = pk).first()
-   print('req user: ', request.user, type(request.user))
-   print('comment creator: ', comment_d.name, type(comment_d.name))
-   
+      
    if request.user.is_authenticated and request.user.username == comment_d.name:
+      print('req user: ', request.user, type(request.user))
+      print('comment creator: ', comment_d.name, type(comment_d.name))
       comment_d.delete()
       referer = request.META.get('HTTP_REFERER')
       if referer:
          return redirect(referer)
    else:
-      return HttpResponse("You can't delete this comment")
+       return HttpResponse("Only comment's creator can delete!")
+   
    
    
 

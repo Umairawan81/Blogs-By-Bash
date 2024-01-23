@@ -9,5 +9,13 @@
             "src": "/(.*)",
             "dest": "Blogs/wsgi.py"
         }
-    ]
+    ],
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/" }
+      ]
+
 }
+
+
+    
+  

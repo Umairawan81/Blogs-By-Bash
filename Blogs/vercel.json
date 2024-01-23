@@ -5,14 +5,12 @@
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "Blogs/wsgi.py"
-        }
-    ],
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/" }
-      ]
+    {
+        "src": "/(.*)",
+        "dest": "Blogs.wsgi.application"
+    }
+]
+    
 
 }
 
